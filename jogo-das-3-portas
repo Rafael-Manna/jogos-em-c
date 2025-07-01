@@ -1,0 +1,63 @@
+/******************************************************************************
+Rafael Santos manna
+Atividade das 3 portas
+*******************************************************************************/
+#include <stdio.h>
+#include <time.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{
+    printf(" \n\n    JOGO DAS 3 PORTAS\n\n");
+    int escolha;
+    int vida = 1;
+    int gg = 0;
+    int nivel = 1;
+    srand(time(NULL));
+   
+        while(gg<3){
+            printf("                           Nivel: %d", nivel);
+             printf(" |  Tentativas restantes: %d\n", vida);
+            int na = (rand() % 3) + 1;
+            
+            printf("        Escolha a porta\n");
+            printf("        Porta 1\n");
+            printf("        Porta 2\n");
+            printf("        Porta 3\n");
+            scanf("%d", &escolha);
+            if (escolha==1||escolha==2||escolha==3){
+            if (escolha==na){
+                system("clear");
+                printf("\n\n    JOGO DAS 3 PORTAS\n\n");
+                printf("        Acertou\n");
+                nivel++;
+                gg++;
+            }
+            else{
+                 system("clear");
+                 printf("\n\n    JOGO DAS 3 PORTAS\n\n");
+                printf("        ERROU... ");
+                vida = vida - 1;
+             
+                printf("    A porta certa era a %d :(\n",na);
+               
+                if (vida== -1){
+                   
+                    printf("        GAME OVER\n");
+                    return 0;
+                }
+            }
+            
+        }
+        else{
+            system("clear");
+                printf("Numero invalido, tente novamente (1, 2 ou 3) \n");
+            }
+        }
+        printf("        GANHOU PARABENS!! ╰(*°▽°*)╯");
+    
+
+    return 0;
+
+    
+}
